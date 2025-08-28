@@ -40,7 +40,7 @@ class LocalAuthService {
 
     return await _auth.authenticate(
       localizedReason: localizedReason ?? 'Please authenticate to access the app',
-      options: const AuthenticationOptions(biometricOnly: true),
+      options: const AuthenticationOptions(biometricOnly: true, stickyAuth: true),
     );
   }
 }

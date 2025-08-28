@@ -1,3 +1,8 @@
+## 1.0.1
+
+* Enable stickyAuth for improved biometric authentication experience
+* Biometric authentication now persists during the app session
+
 ## 1.0.0
 
 * Initial release of secure_app_lock package
