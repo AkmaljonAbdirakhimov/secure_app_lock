@@ -1,7 +1,9 @@
 name: secure_app_lock
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: A Flutter package that provides secure app lock functionality with PIN code and biometric authentication support.
+version: 1.0.0
+homepage: https://github.com/AkmaljonAbdirakhimov/secure_app_lock
+repository: https://github.com/AkmaljonAbdirakhimov/secure_app_lock
+issue_tracker: https://github.com/AkmaljonAbdirakhimov/secure_app_lock/issues
 
 environment:
   sdk: ^3.9.0
