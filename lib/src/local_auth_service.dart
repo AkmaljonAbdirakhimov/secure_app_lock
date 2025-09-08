@@ -1,36 +1,41 @@
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalAuthService {
-  final _storage = const FlutterSecureStorage();
   final _auth = LocalAuthentication();
   static const pinKey = 'user_pin';
   static const lockEnabledKey = 'lock_enabled';
   static const biometricsEnabledKey = 'biometrics_enabled';
 
   Future<void> savePin(String pin) async {
-    await _storage.write(key: pinKey, value: pin);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(pinKey, pin);
   }
 
   Future<String?> getPin() async {
-    return await _storage.read(key: pinKey);
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(pinKey);
   }
 
   Future<void> saveLockEnabled(bool enabled) async {
-    await _storage.write(key: lockEnabledKey, value: enabled ? 'true' : 'false');
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(lockEnabledKey, enabled ? 'true' : 'false');
   }
 
   Future<bool> getLockEnabled() async {
-    final value = await _storage.read(key: lockEnabledKey);
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getString(lockEnabledKey);
     return value == 'true';
   }
 
   Future<void> saveBiometricsEnabled(bool enabled) async {
-    await _storage.write(key: biometricsEnabledKey, value: enabled ? 'true' : 'false');
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(biometricsEnabledKey, enabled ? 'true' : 'false');
   }
 
   Future<bool> getBiometricsEnabled() async {
-    final value = await _storage.read(key: biometricsEnabledKey);
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getString(biometricsEnabledKey);
     return value == 'true';
   }
 

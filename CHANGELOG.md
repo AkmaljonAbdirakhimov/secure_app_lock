@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Used shared_preferences
+
 ## 1.0.1
 
 * Enable stickyAuth for improved biometric authentication experience

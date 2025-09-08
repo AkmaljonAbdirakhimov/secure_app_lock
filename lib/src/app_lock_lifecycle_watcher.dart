@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '../secure_app_lock.dart';
-import 'app_lock_screen_wrapper.dart';
-import 'pin_code_page.dart';
 
 class AppLockLifecycleWatcher extends StatefulWidget {
   final Widget child;
